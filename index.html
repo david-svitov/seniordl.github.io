@@ -21,7 +21,34 @@
             "Increase weights decay",
             "Decrease weights decay",
             "Use synthetic data",
-            "Don't use synthetic data"
+            "Don't use synthetic data",
+            "Use L2 regularization",
+            "Use L1 regularization",
+            "Add more augmentations",
+            "Use inverted bottlenecks",
+            "Add warmup",
+            "Use LR cosine annealing",
+            "Use Swish activation function",
+            "Normalize input data",
+            "Use your unlabelled data",
+            "Start from ImageNet pretrain",
+            "Frieze the first layers of model",
+            "Use Efficient net",
+            "Use focal loss",
+            "Use Arcface",
+            "Try semi supervised pretrain",
+            "Use GRU",
+            "Use Transformer",
+            "Use LSTM",
+            "Add attention",
+            "Add SE-blocks",
+            "Add weights standardization",
+            "Try InstanceNormalization",
+            "Try GroupNormalization",
+            "Try NovoGrad",
+            "Steal the solution from GitHub",
+            "Rewrite on TensorFlow",
+            "Rewrite on Pytorch"
         ];
         let counter = 0;
         let animation_length = 15;
@@ -91,6 +118,12 @@
             border-radius: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,.35);
         }
+        div#instruction {
+            text-align: center;
+            width: 450px;
+            margin-bottom: 40px;
+            color: #454545;
+        }
         table, tr, td {
             text-align: center;
         }
@@ -99,6 +132,17 @@
 </head>
 <body>
     <table>
+        <tr>
+            <td>
+                <div id="instruction">
+                    Welcome! </br>
+                    Are you a young deep learning company? But you don't have money for a Senior DL researcher? </br>
+                    It doesn't matter, our website can replace them! When you are having difficulty training a neural
+                    network and need advice from a senior fellow, just go to this website and click the Get Advice button! </br>
+                    -----
+                </div>
+            </td>
+        </tr>
         <tr>
             <td>
                 <div id="screen">Your advice from a Senior DL researcher will be here</div>
