@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Senior DL researcher simulator</title>
+
+    <script>
+        const advices = [
+            "Decrease learning rate",
+            "Increase learning rate",
+            "Collect more training data",
+            "Use BatchNorm layers",
+            "Add more skip connections",
+            "Use Adam optimizer",
+            "Use SGD optimizer",
+            "Increase batch size",
+            "Decrease batch size",
+            "Try U-Net",
+            "Try Resnet",
+            "Stack more layers",
+            "Increase weights decay",
+            "Decrease weights decay",
+            "Use synthetic data",
+            "Don't use synthetic data"
+        ];
+        let counter = 0;
+        let animation_length = 15;
+
+        function getAdvice() {
+            const random_spins = animation_length + Math.floor(Math.random() * animation_length);
+            const screen = document.getElementById("screen");
+
+            let speed = 10;
+            setTimeout(timer, speed);
+
+            let i = 0;
+            function timer() {
+                i += 1;
+                if (i <= random_spins) {
+                    screen.innerHTML = advices[counter];
+                    counter += 1;
+                    if (counter >= advices.length) counter = 0;
+                    setTimeout(timer, i * speed);
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { height: 100%; }
+        body {
+            min-height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border: none;
+            color: white;
+            font-family: Avenir, Arial, sans-serif;
+            font-weight: 900;
+            font-size: 2.5rem;
+            background: red;
+            text-shadow: 0 3px 1px rgba(122,17,8,.8);
+            box-shadow: 0 8px 0 rgb(183,9,0),
+            0 15px 20px rgba(0,0,0,.35);
+            text-transform: uppercase;
+            transition: .1s all ease-in;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        button:active {
+            padding-top: 3px;
+            transform: translateY(4px);
+            box-shadow: 0 4px 0 rgb(183,0,0),
+            0 8px 6px rgba(0,0,0,.45);
+        }
+        div#screen {
+            text-align: center;
+            border: 1px solid black;
+            width: 450px;
+            margin-bottom: 40px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,.35);
+        }
+        table, tr, td {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <div id="screen">Your advice from a Senior DL researcher will be here</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="getAdvice()">Get advice</button>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
